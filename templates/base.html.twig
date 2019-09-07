@@ -6,7 +6,14 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+            <app-root></app-root>
+        {% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {{ encore_entry_script_tags('polyfills') }}
+            {{ encore_entry_script_tags('vendor') }}
+            {{ encore_entry_script_tags('main') }}
+        {% endblock %}
     </body>
 </html>
